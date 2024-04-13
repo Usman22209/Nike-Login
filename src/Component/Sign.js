@@ -10,15 +10,10 @@ export const Sign = () => {
     const check = () => {
         if(email==="npm install"){
             setemail("")
-            setTimeout(() => {
-                setemail("npm install")
-            }, 4000);
+            
         }
         if(username==="asdfgh"){
             setusername("");
-            setTimeout(() => {
-                setusername("asdfgh")
-            }, 4000);
         }
         if(password==="vscode"){
             setpassword("")
