@@ -17,15 +17,10 @@ export const Sign = () => {
         }
         if(password==="vscode"){
             setpassword("")
-            setTimeout(() => {
-                setpassword("vscode")
-            }, 4000);
+            
         }
         if(cpassword==="vscode"){
             setcpassword("")
-            setTimeout(() => {
-                setcpassword("vscode")
-            }, 4000);
         }
         
         if (password === cpassword) {
@@ -33,15 +28,9 @@ export const Sign = () => {
         }
         else {
             setmatchpassword(false)
-            setTimeout(() => {
-                setmatchpassword(true);
-            }, 4000);
         }
         if (password!==null && cpassword!=null && (password.length < 8 || cpassword.length<8)) {
             setlpassword(false) 
-            setTimeout(() => {
-                setlpassword(true);
-            }, 4000);
         }
         else {
             setlpassword(true)
