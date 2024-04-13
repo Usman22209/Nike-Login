@@ -9,6 +9,7 @@ function App() {
     <BrowserRouter>
       <div className='overflow-x-hidden'>
         <Nav />
+        //using react router to dom to navigate between Main and signin pages
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/sign' element={<Sign />} />

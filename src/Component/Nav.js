@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 
 export const Nav = () => {
     const [open, setopen] = useState(false)
+    //toogle menu function to hide and unhide menu bar in mobile devices
     const togglemenu = () => {
         let menu = document.getElementById("menu");
         let img = document.getElementById("img")
         if (menu.classList.contains("opacity-0")) {
             setopen(true)
-            // menu.classList.replace("-right-[100%]", "right-0")
             menu.classList.replace("opacity-0", "opacity-100")
             img.classList.replace("w-10", "w-8")
         } else {
-            // menu.classList.replace("right-0", "-right-[100%]")
+          
             menu.classList.replace("opacity-100", "opacity-0")
             img.classList.replace("w-8", "w-10")
             setopen(false)
@@ -29,6 +29,7 @@ export const Nav = () => {
                 <Link to="/sign" className='text-white w-[90%] bg-red-600 sm:px-4 text-center hover:bg-red-700  mr-auto sm:mr-2 py-1 rounded-sm'>
                     <button  onClick={togglemenu}>Login</button></Link>
             </div>
+            //changing hamburger to close based on the value of open
             <img id='img' src={open ? "close.svg" : "hamburger.svg"} className='w-10 visible sm:hidden absolute right-1 menu ' onClick={togglemenu} alt="" />
         </div>
     )

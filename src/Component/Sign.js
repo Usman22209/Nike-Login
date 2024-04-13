@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 export const Sign = () => {
+    //using usestate to get the the input of user 
     const [password, setpassword] = useState("vscode")
     const [lpassword, setlpassword] = useState(true)
     const [cpassword, setcpassword] = useState("vscode")
     const[username,setusername]=useState("asdfgh")
     const [email,setemail]=useState("npm install")
     const [matchpassword, setmatchpassword] = useState(true)
+    //check function to check password and confirm password and equal and also other conditions are validated
     const check = () => {
         if(email==="npm install"){
             setemail("")
@@ -22,13 +24,14 @@ export const Sign = () => {
         if(cpassword==="vscode"){
             setcpassword("")
         }
-        
+        //comparing password and updating value of match password
         if (password === cpassword) {
             setmatchpassword(true)
         }
         else {
             setmatchpassword(false)
         }
+        //checking user enter password and c password and make sure password length is more than 8
         if (password!==null && cpassword!=null && (password.length < 8 || cpassword.length<8)) {
             setlpassword(false) 
         }
@@ -48,6 +51,7 @@ export const Sign = () => {
                 <input type="text" required placeholder='UserName' className='w-full border-b focus:outline-0 focus:border-b-2 border-black'onChange={(e)=>{
                  setusername(e.target.value)   
                 }} />
+                //it will be showed when username is empty
                 {username==="" && <div className='text-red-600 text-sm'>*Username required</div>}
                 <input type="email" required placeholder='Email adress' className='w-full border-b focus:outline-0 focus:border-b-2 border-black' onChange={(e)=>{setemail(e.target.value)}} />
                 {email==="" && <div className='text-red-500 text-sm'>*Email required</div>}
@@ -65,7 +69,8 @@ export const Sign = () => {
                     cpassword==="" && <div className='text-red-600 text-sm'>**Confirm password</div>
                 }
                 <input type="submit" className='w-fit bg-red-600 hover:bg-red-700 text-white py-1 cursor-pointer px-3 rounded-sm' onClick={check} />
-               {!matchpassword &&  <div className='text-red-600 text-sm'>*Passwords don't match!</div>}
+                //will appear on based of value of matchpassword if it will be false it will be showed
+                {!matchpassword &&  <div className='text-red-600 text-sm'>*Passwords don't match!</div>}
                {!lpassword &&  <div className='text-red-600 text-sm'>**Password length should atleast be 8</div>}
             </div>
         </div>

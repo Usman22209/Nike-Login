@@ -1,6 +1,7 @@
 import React from 'react'
 export const Main = () => {
     return (
+        //Main content of the page
         <div className='flex row sm:mt-[50px] mt-3 '>
 
             <div id="text" className='sm:ml-16 ml-6 mx-auto'><h1 className='text-[40px] sm:text-[70px] pr-10 sm:mx-auto text-start font-[impact] '>
